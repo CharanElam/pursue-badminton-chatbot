@@ -21,9 +21,9 @@ def load_rag_chain():
     retriever = vectorstore.as_retriever(search_kwargs={"k": 3})
 
     llm = ChatGroq(
-        model="llama3-8b-8192",
+        model="llama-3.1-8b-instant",
         temperature=0.7,
-        api_key=os.environ["GROQ_API_KEY"],
+        groq_api_key=os.environ["GROQ_API_KEY"],
     )
 
     prompt = ChatPromptTemplate.from_messages([
